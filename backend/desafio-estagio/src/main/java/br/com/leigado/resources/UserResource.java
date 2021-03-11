@@ -1,16 +1,20 @@
 package br.com.leigado.resources;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+
+import org.jboss.resteasy.annotations.jaxrs.PathParam;
 
 import br.com.leigado.dto.UserDTO;
 import br.com.leigado.entities.User;
@@ -26,7 +30,7 @@ public class UserResource {
 	@Transactional
 	@Consumes(MediaType.APPLICATION_JSON)
 	public void insert(User user) {
-		repository.persist(user);
+		repository.persist(Arrays.asList(user));
 	}
 	
 	@GET
@@ -37,5 +41,22 @@ public class UserResource {
 				.map(user -> new UserDTO(user)).collect(Collectors.toList());
 		return usersDto;
 	}
+	
+	@GET
+	@Path("/{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public UserDTO findById(@PathParam Long id) {
+		User user = repository.findById(id);
+		return new UserDTO(user);
+	}
+ 	
+	@DELETE
+	@Transactional
+	@Path("/{id}")
+	public void deleteById(@PathParam Long id) {
+		User user = repository.findById(id);
+		repository.delete(user);
+	}
+	
 
 }

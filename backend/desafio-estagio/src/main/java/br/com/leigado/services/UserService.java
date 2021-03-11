@@ -14,5 +14,9 @@ public class UserService {
 	public PanacheQuery<User> findAll() {
 		return repository.findAll();
 	}
+	
+	public void deleteById(User user) {
+		repository.delete(user);
+	}
 
 }
