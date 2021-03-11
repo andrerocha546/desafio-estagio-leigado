@@ -19,7 +19,7 @@ public class User implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Long id;
 	@Embedded
 	private Name name;
 	@Embedded
@@ -61,7 +61,7 @@ public class User implements Serializable{
 		this.password = password;
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 	

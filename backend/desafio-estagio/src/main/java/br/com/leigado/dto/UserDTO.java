@@ -7,7 +7,7 @@ import br.com.leigado.entities.User;
 public class UserDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	private Integer id;
+	private Long id;
 	private String name;
 	private String email;
 
@@ -17,12 +17,8 @@ public class UserDTO implements Serializable {
 		this.email = user.getEmail().getEmail();
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
 	}
 
 	public String getName() {
