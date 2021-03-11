@@ -1,9 +1,12 @@
 package br.com.leigado.entities.data;
 
+import javax.persistence.Embeddable;
+
 import br.com.leigado.entities.data.exception.DataException;
 import br.com.leigado.services.BCryptHashService;
 import br.com.leigado.services.Encryptor;
 
+@Embeddable
 public class Password {
 	
 	private static final Validator VALIDATOR = new ValidatorPassword();

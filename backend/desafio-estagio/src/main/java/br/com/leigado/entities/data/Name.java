@@ -1,7 +1,10 @@
 package br.com.leigado.entities.data;
 
+import javax.persistence.Embeddable;
+
 import br.com.leigado.entities.data.exception.DataException;
 
+@Embeddable
 public class Name {
 	
 	private static final Validator VALIDATOR = new ValidatorName();

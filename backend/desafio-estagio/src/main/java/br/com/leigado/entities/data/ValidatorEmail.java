@@ -3,7 +3,7 @@ package br.com.leigado.entities.data;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class EmailValidator implements Validator {
+public class ValidatorEmail implements Validator {
 
 	@Override
 	public boolean isValid(String email) {

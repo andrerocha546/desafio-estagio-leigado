@@ -1,14 +1,27 @@
 package br.com.leigado.entities;
 
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 import br.com.leigado.entities.data.Email;
 import br.com.leigado.entities.data.Name;
 import br.com.leigado.entities.data.Password;
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 
-public class User {
+@Entity
+public class User extends PanacheEntityBase {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	@Embedded
 	private Name name;
+	@Embedded
 	private Email email;
+	@Embedded
 	private Password password;
 	
 	public User() {
