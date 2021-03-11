@@ -54,11 +54,27 @@
 			<artifactId>rest-assured</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.quarkus/quarkus-jdbc-h2 -->
 		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
+			<groupId>io.quarkus</groupId>
+			<artifactId>quarkus-hibernate-orm-panache</artifactId>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.quarkus/quarkus-jdbc-h2 -->
+		<dependency>
+			<groupId>io.quarkus</groupId>
+			<artifactId>quarkus-jdbc-h2</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.quarkus</groupId>
+			<artifactId>quarkus-resteasy-jsonb</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>io.quarkus</groupId>
+			<artifactId>quarkus-jdbc-mysql</artifactId>
+		</dependency>
+
+
 	</dependencies>
 	<build>
 		<plugins>
@@ -83,7 +99,7 @@
 			</plugin>
 			<plugin>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>${surefire-plugin.version}</version>
+				<version>2.18.1</version>
 				<configuration>
 					<systemPropertyVariables>
 						<java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
