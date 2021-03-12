@@ -3,6 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 
+import 'font-awesome/css/font-awesome.css'
+import './config/bootstrap'
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
